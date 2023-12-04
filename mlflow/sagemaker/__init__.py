@@ -1582,6 +1582,7 @@ def _create_sagemaker_endpoint(
 
     def status_check_fn():
         endpoint_info = _find_endpoint(endpoint_name=endpoint_name, sage_client=sage_client)
+        print(endpoint_info)
 
         if endpoint_info is None:
             return _SageMakerOperationStatus.in_progress("Waiting for endpoint to be created...")
